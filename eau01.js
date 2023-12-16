@@ -5,16 +5,20 @@ function showTreeNumber() {
             for (let c = b + 1; c < 10; c++) {
 
                 // #resolution
-            function combineNumber() {
-                let combination = [a, b, c];
-            }
-
-                // affichage
-            function showNumber() {
-                console.log(combination.join(''));  
-            }
+            
             }
         }
     }
 }
+function combineNumber() {
+                let combination = [a, b, c];
+            }
+
+     // affichage
+function showNumber() {
+     console.log(combination.join(''));  
+}            
 number3();
+
+
+           
