@@ -4,21 +4,22 @@ function showTreeNumber() {
         for (let b = a + 1; b < 10; b++) {
             for (let c = b + 1; c < 10; c++) {
 
-                // #resolution
-            
+                combineNumber(a, b, c);
+
             }
         }
     }
 }
-function combineNumber() {
-                let combination = [a, b, c];
-            }
 
-     // affichage
-function showNumber() {
-     console.log(combination.join(''));  
-}            
-number3();
+// #resolution
+function combineNumber(a, b, c) {
+    let combination = [a, b, c];
+    showNumber(combination);
+}
 
+// affichage
+function showNumber(combination) {
+    console.log(combination.join(''));
+}
 
-           
+showTreeNumber();
