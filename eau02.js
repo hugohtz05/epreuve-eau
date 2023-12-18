@@ -1,12 +1,14 @@
+    // fonction utilisées
 function twoNumber() {
-    for (let i = 0; i < 100; i++) {
-        for (let j = i + 1; j < 100; j++) {
-            console.log(`${formatNombre(i)} ${formatNombre(j)},`);
+    for (let a = 0; a < 100; a++) {
+        for (let b = a + 1; b < 100; b++) {
+            // affichage 
+            console.log(`${formatNumber(a)} ${formatNumber(b)},`);
         }
     }
 }
-
-function formatNombre(nombre) {
+    // résolution
+function formatNumber(nombre) {
     return (nombre < 10) ? `0${nombre}` : `${nombre}`;
 }
 
