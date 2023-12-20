@@ -1,21 +1,22 @@
-//Fonction utilisées//
-function firstNumber() {
-    let result = 0;
-    let increment = 2;
-
-    if (result === 0) {
-        argument++;
-    } else {
-        argument = argument + 1;
+// Fonction utilisée
+function isPrime(num) {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
     }
-    result = argument % increment;
-    while (increment < argument) {
-        increment++;
-    }
-    return result;
+    return num !== 1 && num !== 0;
 }
 
-//Gestion d'erreur//
+function firstNumber(argument) {
+    let nextNumber = argument + 1;
+    while (!isPrime(nextNumber)) {
+        nextNumber++;
+    }
+    return nextNumber;
+}
+
+// Gestion d'erreur
 function isNumber(argument) {
     if (isNaN(argument) || argument < 0) {
         console.log("Erreur : l'argument doit être un nombre entier positif");
@@ -23,15 +24,16 @@ function isNumber(argument) {
     }
 }
 
-//parsing//
-function getArgument () {
-    let argument = parseInt(process.argv.slice(2)); 
+// Parsing
+function getArgument() {
+    let argument = parseInt(process.argv[2]);
+    return argument; 
 }
 
-//Résolution//
-argument = getArgument()
-isNumber(argument)
-let result = firstNumber(argument)
+// Résolution
+let argument = getArgument();
+isNumber(argument);
+let result = firstNumber(argument);
 
-//Affichage//
-console.log(argument);
+// Affichage
+console.log(result);
