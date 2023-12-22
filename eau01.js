@@ -1,25 +1,15 @@
-// #fonctions utilisées 
-function showTreeNumber() {
-    for (let a = 0; a < 10; a++) {
-        for (let b = a + 1; b < 10; b++) {
-            for (let c = b + 1; c < 10; c++) {
-
-                combineNumber(a, b, c);
-
-            }
+    // fonction utilisées
+function twoNumber() {
+    for (let a = 0; a < 100; a++) {
+        for (let b = a + 1; b < 100; b++) {
+            // affichage 
+            console.log(`${formatNumber(a)} ${formatNumber(b)},`);
         }
     }
 }
-
-// #resolution
-function combineNumber(a, b, c) {
-    let combination = [a, b, c];
-    showNumber(combination);
+    // résolution
+function formatNumber(nombre) {
+    return (nombre < 10) ? `0${nombre}` : `${nombre}`;
 }
 
-// affichage
-function showNumber(combination) {
-    console.log(combination.join(''));
-}
-
-showTreeNumber();
+twoNumber();
