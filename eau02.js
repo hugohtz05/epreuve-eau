@@ -1,15 +1,16 @@
-    // fonction utilisées
-function twoNumber() {
-    for (let a = 0; a < 100; a++) {
-        for (let b = a + 1; b < 100; b++) {
-            // affichage 
-            console.log(`${formatNumber(a)} ${formatNumber(b)},`);
+	// fonction utilisées
+function reverseArgument() {
+    const argument = process.argv.slice(2);
+
+    let result = "";
+    for (let i = argument.length - 1; i >= 0; i--) {
+        result += argument[i];
+        if (i > 0) {
+            result += ' '; 
         }
     }
-}
-    // résolution
-function formatNumber(nombre) {
-    return (nombre < 10) ? `0${nombre}` : `${nombre}`;
+    // affichage
+    console.log(typeof(result));
 }
 
-twoNumber();
+reverseArgument();
