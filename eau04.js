@@ -1,22 +1,22 @@
 // Fonction utilisée
-function fibonacciNthElement(n) {
-    if (n === 0) return 0;
-    if (n === 1) return 1;
-
-    let a = 0;
-    let b = 1;
-
-    for (let i = 2; i <= n; i++) {
-        let c = a + b;
-        a = b;
-        b = c;
+function isPrime(num) {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
     }
-
-    return b;
+    return num !== 1 && num !== 0;
 }
 
-// Gestion des erreurs
+function firstNumber(argument) {
+    let nextNumber = argument + 1;
+    while (!isPrime(nextNumber)) {
+        nextNumber++;
+    }
+    return nextNumber;
+}
 
+// Gestion d'erreur
 function isNumber(argument) {
     if (isNaN(argument) || argument < 0) {
         console.log("Erreur : l'argument doit être un nombre entier positif");
@@ -25,16 +25,15 @@ function isNumber(argument) {
 }
 
 // Parsing
-function getArguments() {
-let argument = parseInt(process.argv[2]);
-    return argument;
+function getArgument() {
+    let argument = parseInt(process.argv[2]);
+    return argument; 
 }
 
 // Résolution
-let argument = getArguments();
-isNumber(argument);  
- 
-let result = fibonacciNthElement(argument);
+let argument = getArgument();
+isNumber(argument);
+let result = firstNumber(argument);
 
 // Affichage
 console.log(result);
