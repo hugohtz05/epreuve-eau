@@ -1,10 +1,9 @@
 // Fonction utilisée
-function isSlice(argument) {
+function isSlice(argument, argument2) {
     let i, j;
 
     for (i = 0; i < argument.length; i++) {
         for (j = i + 1; j <= argument.length; j++) {
-            // Ajoutez ici la condition pour trouver la sous-chaîne
             if (argument.slice(i, j) === argument2) {
                 return { i, j };
             }
@@ -13,8 +12,8 @@ function isSlice(argument) {
     return { i: -1, j: -1 };
 }
 
-function verifySlice(argument1,) {
-    let { i, j } = isSlice(argument1);
+function verifySlice(argument1,argument2) {
+    let { i, j } = isSlice(argument1,argument2);
     if (i !== -1 && j !== -1) {
         console.log("true");
     } else {
