@@ -1,39 +1,41 @@
 // Fonction utilisée
-function isPrime(num) {
-    for (let i = 2; i < num; i++) {
-        if (num % i === 0) {
-            return false;
+function isSlice(argument) {
+    let i, j;
+
+    for (i = 0; i < argument.length; i++) {
+        for (j = i + 1; j <= argument.length; j++) {
+            // Ajoutez ici la condition pour trouver la sous-chaîne
+            if (argument.slice(i, j) === argument2) {
+                return { i, j };
+            }
         }
     }
-    return num !== 1 && num !== 0;
+    return { i: -1, j: -1 };
 }
 
-function firstNumber(argument) {
-    let nextNumber = argument + 1;
-    while (!isPrime(nextNumber)) {
-        nextNumber++;
+function verifySlice(argument1,) {
+    let { i, j } = isSlice(argument1);
+    if (i !== -1 && j !== -1) {
+        console.log("true");
+    } else {
+        console.log("false");
     }
-    return nextNumber;
 }
 
 // Gestion d'erreur
-function isNumber(argument) {
-    if (isNaN(argument) || argument < 0) {
-        console.log("Erreur : l'argument doit être un nombre entier positif");
+function main() {
+    if (process.argv.length !== 4) {
+        console.log("Error: Veuillez fournir deux chaînes de caractères en arguments.");
         process.exit(1);
     }
+
+    // Parsing
+    let argument1 = process.argv[2];
+    let argument2 = process.argv[3];
+
+    // Résolution
+    verifySlice(argument1, argument2);
 }
 
-// Parsing
-function getArgument() {
-    let argument = parseInt(process.argv[2]);
-    return argument; 
-}
-
-// Résolution
-let argument = getArgument();
-isNumber(argument);
-let result = firstNumber(argument);
-
-// Affichage
-console.log(result);
+// Appel de la fonction main
+main();
