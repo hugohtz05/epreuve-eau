@@ -26,7 +26,7 @@ function isNumber(argument) {
 
 // Parsing
 function getArguments() {
-let argument = parseInt(process.argv[2]);
+let argument = parseInt(process.argv.slice(2));
     return argument;
 }
 
