@@ -1,7 +1,7 @@
 //Fonctions utilisées
-function isStringOfNumber(chaine) {
-    for (let i = 0; i < chaine.length; i++) {
-        if (isNaN(chaine[i])) {
+function isStringOfNumber(args) {
+    for (let i = 0; i < args.length; i++) {
+        if (isNaN(args[i])) {
             return false;  
         }
     }
