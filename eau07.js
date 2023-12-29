@@ -1,46 +1,26 @@
-function evenOrOdd(argument) {
-    const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz';
-    const upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// Fonctions utilisées
+function majOnString(args) {
+    let modifiedArguments = '';
 
-    let result = '';
-
-    for (let i = 0; i < argument.length; i++) {
-        let char = argument[i];
-        let index = lowerCaseLetters.indexOf(char);
-
-        if (index !== -1) {
-            if (i % 2 === 0) {
-                result += upperCaseLetters[index];
-            } else {
-                result += char;
-            }
-        } else {
-            result += char;
+    for (let i = 0; i < args.length; i++) {
+        if (args[i].length > 0) {
+            modifiedArguments += args[i][0].toUpperCase() + args[i].slice(1) + ' ';
         }
     }
 
-    return result;
+    return modifiedArguments;  
 }
 
-// Gestion d'erreur //
-function isANumber(argument) {
-    if (!isNaN(argument)) {
-        throw new Error("Erreur : L'argument ne doit pas être un nombre.");
-    }
+// Gestion d'erreur
+// parsing
+function getArguments() {
+    let arguments = process.argv.slice(2);
+    return arguments;
 }
 
-// Parsing //
-function getArgument() {
-    return process.argv.slice(2).join('');
-}
+// Résolution
+let myArguments = getArguments();
+let result = majOnString(myArguments);
 
-// Résolution //
-try {
-    const argumentFromCommandLine = getArgument();
-    isANumber(argumentFromCommandLine);
-    const result = evenOrOdd(argumentFromCommandLine);
-    // Affichage //
-    console.log(result);
-} catch (error) {
-    console.error(error.message);
-}
+// Affichage
+console.log(result);
