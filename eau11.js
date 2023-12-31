@@ -5,7 +5,6 @@ function triBulle(arg) {
 
     for (let i = 0; i < n - 1; i++) {
         for (let j = 0; j < n - 1 - i; j++) {
-            // Convertit les éléments en nombres
             arg[j] = parseFloat(arg[j]);
             arg[j + 1] = parseFloat(arg[j + 1]);
 
@@ -50,8 +49,6 @@ function getArgument() {
 let myArgument = getArgument();
 let result = triBulle(myArgument);
 let result2 = minimalDifference(myArgument);
-
-
 
 // Affichage
 console.log(result2);
