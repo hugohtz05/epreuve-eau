@@ -5,7 +5,7 @@ function triBulle(arg) {
 
     for (let i = 0; i < n - 1; i++) {
         for (let j = 0; j < n - 1 - i; j++) {
-            // Convertit les éléments en nombres
+            
             arg[j] = parseFloat(arg[j]);
             arg[j + 1] = parseFloat(arg[j + 1]);
 
